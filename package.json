@@ -1,0 +1,33 @@
+{
+  "name": "intergration-testing-with-node",
+  "version": "1.0.0",
+  "description": "API testing with jest AND supertest",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --watchAll",
+    "start": "nodemon index"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mazenfteha/intergration-testing-with-Node.js.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mazenfteha/intergration-testing-with-Node.js/issues"
+  },
+  "homepage": "https://github.com/mazenfteha/intergration-testing-with-Node.js#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "express-validator": "^7.0.1",
+    "nodemon": "^2.0.22"
+  },
+  "jest": {
+    "modulePathIgnorePatterns": ["books.json"]
+  },
+  "devDependencies": {
+    "jest": "^29.5.0",
+    "supertest": "^6.3.3"
+  }
+}
