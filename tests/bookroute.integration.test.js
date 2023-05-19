@@ -56,4 +56,29 @@ describe("Integration test for the books API", () => {
             message: 'Success'
         })
     })
+
+    it('PUT /api/books/:bookid - failure when book is not found' , async () => {
+        const {body, statusCode } = await request(app).put('/api/books/5000').send({
+            name:'crime and punishment',
+            author:'Dostoevsky'
+        });
+        expect(statusCode).toBe(404);
+        expect(body).toEqual({
+            errors: true,
+            message: 'Book not found'
+        })
+    })
+
+    it('PUT /api/books/:bookid - success - Successfuly updated' , async () => {
+        const {body, statusCode } = await request(app).put('/api/books/2').send({
+            name:'Let him cook',
+            author:'Walter white'
+        });
+        expect(statusCode).toBe(201);
+        expect(body).toEqual({
+            name:'Let him cook',
+            author:'Walter white',
+            id:2
+        })
+    })
 })
